@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>x2ero</title>
+    <description>internet.musik.politik</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 16 Oct 2017 22:34:24 +0200</pubDate>
+    <lastBuildDate>Mon, 16 Oct 2017 22:34:24 +0200</lastBuildDate>
+    <generator>Jekyll v3.6.0</generator>
+    
+      <item>
+        <title>Jekyll - Die Statik des Webs</title>
+        <description>&lt;h3&gt;Warum?&lt;/h3&gt;
+Diesen meinen neuen Blog habe zum Anlaß genommen, mich mal wieder mit Statische Webseiten - Generatoren auseinander zu setzen. Ich hatte schon mal
+&lt;a href='https://nanoc.ws' title='nanoc'&gt;nanoc&lt;/a&gt;
+verwendet, ich habe mir
+&lt;a href='https://gohugo.io/'&gt;Hugo&lt;/a&gt;
+angesehen, schliesslich habe ich mich dazu entschieden
+&lt;a href='https://jekyllrb.com/'&gt;Jekyll&lt;/a&gt;
+zu verwenden.
+&lt;br&gt;
+Da ich mit ruby vertraut bin, und in allen Projekten gerne
+&lt;a href='http://sass-lang.com/'&gt;sass&lt;/a&gt;
+und
+&lt;a href='http://haml.info/'&gt;haml&lt;/a&gt;
+verwende und die nötigen ruby Sachen sowieso schon auf meiner Maschine hatte war das irgendwie logisch. Somit gestaltete sich die Installation von Jekyll trivial. Als zusätzliches Plugin habe ich noch
+&lt;a href='https://github.com/samvincent/jekyll-haml'&gt;jekyll-haml&lt;/a&gt;
+installiert.
+&lt;h3&gt;Wozu braucht man das?&lt;/h3&gt;
+Jekyll ist sowas wie ein Zwischending zwischen „von Hand“ geschriebenen statischen Seiten und so mächtigen Content Management Systemen wie Wordpress oder Typo3. Es ermöglicht einerseits Templates und ein wenig Logik und Automatismen beim Webseitenbau einzubeziehen. Andererseits braucht man keine Datenbank und kein PHP oder dergleichen. Neuer Inhalt wird einfach in Form von Text-Dateien erstellt, Jekyll stellt dann alles zusammen. Auf dem Server landen lediglich die fertigen HTML- und CSS-Dateien. Deswegen „statisch“.
+&lt;br&gt;Die Vorteile sind klar: Keine Sicherheitsprobleme und sie sind sehr schnell, weil serverseitig nichts passieren muss, ausser das HTML  auszuliefern.&lt;/br&gt;
+&lt;h3&gt;Und wie geht das jetzt?&lt;/h3&gt;
+Um einen neuen Blog-Post oder sogar für eine neue Seite muss lediglich eine Plain Text Datei angelegt werden, mit dem sog. „Frontmatter“ am Anfang, gefolgt vom Inhalt, standardmässig in der Auszeichnungs-Syntax „Markdown“.
+&lt;p&gt;
+&lt;figure&gt;
+&lt;figcaption&gt;
+Frontmatter:
+&lt;pre&gt;layout: post
+title:  &quot;Jekyll - Die Statik des Webs&quot;
+date:   2017-10-16 18:30:00 +0200
+categories: [&quot;web&quot;, &quot;ruby&quot;]
+author: &quot;Daniel Schubert&quot;&lt;/pre&gt;
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+Im Frontmatter werden die Meta-Informationen notiert. Die Eigenschaft „layout“ bestimmt, ob es ein Post oder eine Seite, oder ein Custom Inhalt sein soll. Das bestimmt wie der Inhalt angezeigt wird.
+&lt;br&gt;Dann folgt der Inhalt. Ich verwende, wie bereits erwähnt, nicht Markdown sondern haml. Das sieht dann so aus:&lt;/br&gt;
+&lt;p&gt;
+&lt;figure&gt;
+&lt;figcaption&gt;
+Inhalt in haml
+&lt;pre&gt;%h3 Warum?&amp;#x000A;Diesen meinen neuen Blog habe zum Anlaß genommen, mich mal wieder mit &amp;#x000A;Statische Webseiten - Generatoren auseinander zu setzen. Ich hatte schon mal &amp;#x000A;%a{:href =&gt; &quot;#&quot;, :title =&gt; &quot;nanoc&quot;} nanoc &amp;#x000A;verwendet, ich habe mir &amp;#x000A;%a{:href =&gt; &quot;#&quot;} Hugo &amp;#x000A;angesehen, schliesslich habe ich mich dazu entschieden &amp;#x000A;%a{:href =&gt; &quot;#&quot;} Jekyll &amp;#x000A;zu verwenden.&amp;#x000A;&lt;/pre&gt;
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+Für einen „Techie“ macht das Sinn, allerdings ist zugegebenermaßen nicht besonders intuitiv. Standardmässig wird der Inhalt in „Markdown“ notiert. Das ist eine recht einfache Methode formatierten Text zu schreiben:
+&lt;p&gt;
+&lt;figure&gt;
+&lt;figcaption&gt;
+Inhalt in haml
+&lt;pre&gt;### Warum?&amp;#x000A;Diesen meinen neuen Blog habe zum Anlaß genommen, mich mal wieder mit &amp;#x000A;Statische Webseiten - Generatoren auseinander zu setzen. Ich hatte schon &amp;#x000A;mal [nanoc](http://#) verwendet, ich habe mir [Hugo](#) angesehen, &amp;#x000A;schliesslich habe ich mich dazu entschieden [Jekyll](http://#) zu verwenden.&amp;#x000A;&lt;/pre&gt;
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+Wiederkehrende Elemente wie footer und header lassen sich in Templates organisieren und dann nach Bedarf zusammensetzen.
+&lt;h3&gt;Und jetzt?&lt;/h3&gt;
+Ich werde Jekyll wohl in Zukunft für einige Projekte verwenden, wo jedoch Kunden selbst ihren Content bearbeiten wollen werde ich weiterhin auf Wordpress etc. setzen. Zwar ist es unschlagbar einfach Inhalte mit Text Dateien zu erstellen, der Umgang mit Markdown oder Haml ist für den „normalen“ Benutzer / Redakteur / Blogger aber kaum vermittelbar.
+&lt;p&gt;&lt;/p&gt;
+&lt;br&gt;
+Tags: web, ruby, jekyll, haml, und bericht
+</description>
+        <pubDate>Mon, 16 Oct 2017 18:30:00 +0200</pubDate>
+        <link>http://localhost:4000/web/ruby/jekyll/haml/bericht/2017/10/16/jekyll.html</link>
+        <guid isPermaLink="true">http://localhost:4000/web/ruby/jekyll/haml/bericht/2017/10/16/jekyll.html</guid>
+        
+        
+        <category>web</category>
+        
+        <category>ruby</category>
+        
+        <category>jekyll</category>
+        
+        <category>haml</category>
+        
+        <category>bericht</category>
+        
+      </item>
+    
+      <item>
+        <title>Es werde Licht!</title>
+        <description>&lt;p&gt;Ich habe nachgedacht, und ich werde es tun. Ich blogge jetzt...&lt;/p&gt;
+&lt;p&gt;Ich lese und lerne viel, vor allem über Webdevelopement und Musik, und werde meine Erkenntnisse und BEtrachtungen in Zukunft mehr oder weniger häufig Euch, den geneigten Lesern, mitteilen. Schwerpunkte werden dabei vor allem Wordpress, JavaScript, Wordpress, CSS, und natürlich, Bassspielen, sein.&lt;/p&gt;
+&lt;p&gt;
+Viel Spass!
+&lt;/p&gt;
+</description>
+        <pubDate>Mon, 16 Oct 2017 18:05:00 +0200</pubDate>
+        <link>http://localhost:4000/blog/zeugs/2017/10/16/ich-beginne.html</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/zeugs/2017/10/16/ich-beginne.html</guid>
+        
+        
+        <category>blog</category>
+        
+        <category>zeugs</category>
+        
+      </item>
+    
+      <item>
+        <title>Design Stories : Gravity</title>
+        <description>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</description>
+        <pubDate>Wed, 30 Mar 2016 16:15:31 +0200</pubDate>
+        <link>http://localhost:4000/design/science/life/2016/03/30/test.html</link>
+        <guid isPermaLink="true">http://localhost:4000/design/science/life/2016/03/30/test.html</guid>
+        
+        
+        <category>design</category>
+        
+        <category>science</category>
+        
+        <category>life</category>
+        
+      </item>
+    
+  </channel>
+</rss>
