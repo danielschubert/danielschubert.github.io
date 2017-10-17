@@ -5,8 +5,8 @@
     <description>internet.musik.politik</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 16 Oct 2017 22:34:24 +0200</pubDate>
-    <lastBuildDate>Mon, 16 Oct 2017 22:34:24 +0200</lastBuildDate>
+    <pubDate>Tue, 17 Oct 2017 10:02:11 +0200</pubDate>
+    <lastBuildDate>Tue, 17 Oct 2017 10:02:11 +0200</lastBuildDate>
     <generator>Jekyll v3.6.0</generator>
     
       <item>
@@ -24,7 +24,7 @@ Da ich mit ruby vertraut bin, und in allen Projekten gerne
 &lt;a href='http://sass-lang.com/'&gt;sass&lt;/a&gt;
 und
 &lt;a href='http://haml.info/'&gt;haml&lt;/a&gt;
-verwende und die nötigen ruby Sachen sowieso schon auf meiner Maschine hatte war das irgendwie logisch. Somit gestaltete sich die Installation von Jekyll trivial. Als zusätzliches Plugin habe ich noch
+verwende, und die nötigen ruby Sachen sowieso schon auf meiner Maschine hatte, war das irgendwie logisch. Somit gestaltete sich die Installation von Jekyll trivial. Als zusätzliches Plugin habe ich noch
 &lt;a href='https://github.com/samvincent/jekyll-haml'&gt;jekyll-haml&lt;/a&gt;
 installiert.
 &lt;h3&gt;Wozu braucht man das?&lt;/h3&gt;
@@ -65,7 +65,9 @@ Inhalt in haml
 &lt;/p&gt;
 Wiederkehrende Elemente wie footer und header lassen sich in Templates organisieren und dann nach Bedarf zusammensetzen.
 &lt;h3&gt;Und jetzt?&lt;/h3&gt;
-Ich werde Jekyll wohl in Zukunft für einige Projekte verwenden, wo jedoch Kunden selbst ihren Content bearbeiten wollen werde ich weiterhin auf Wordpress etc. setzen. Zwar ist es unschlagbar einfach Inhalte mit Text Dateien zu erstellen, der Umgang mit Markdown oder Haml ist für den „normalen“ Benutzer / Redakteur / Blogger aber kaum vermittelbar.
+Ich werde Jekyll wohl in Zukunft für einige Projekte verwenden, wo jedoch Kunden selbst ihren Content bearbeiten wollen werde ich weiterhin auf Wordpress etc. setzen. Zwar ist es unschlagbar einfach, Inhalte mit Text Dateien zu erstellen, und dann mit
+&lt;pre&gt;git push origin master&lt;/pre&gt;
+zu veröffentlichen. Der Umgang mit Markdown oder Haml und git ist für den „normalen“ Benutzer / Redakteur / Blogger aber kaum vermittelbar. Jekyll ist dann doch ein Tool für ambitionierte Hobbyisten und professionelle Anwender.
 &lt;p&gt;&lt;/p&gt;
 &lt;br&gt;
 Tags: web, ruby, jekyll, haml, und bericht
@@ -103,26 +105,6 @@ Viel Spass!
         <category>blog</category>
         
         <category>zeugs</category>
-        
-      </item>
-    
-      <item>
-        <title>Design Stories : Gravity</title>
-        <description>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-</description>
-        <pubDate>Wed, 30 Mar 2016 16:15:31 +0200</pubDate>
-        <link>http://localhost:4000/design/science/life/2016/03/30/test.html</link>
-        <guid isPermaLink="true">http://localhost:4000/design/science/life/2016/03/30/test.html</guid>
-        
-        
-        <category>design</category>
-        
-        <category>science</category>
-        
-        <category>life</category>
         
       </item>
     
