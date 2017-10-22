@@ -3,16 +3,16 @@
   <channel>
     <title>x2ero</title>
     <description>internet.musik.politik</description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 17 Oct 2017 13:38:17 +0200</pubDate>
-    <lastBuildDate>Tue, 17 Oct 2017 13:38:17 +0200</lastBuildDate>
+    <link>https://danielschubert.github.io/</link>
+    <atom:link href="https://danielschubert.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sun, 22 Oct 2017 13:06:16 +0200</pubDate>
+    <lastBuildDate>Sun, 22 Oct 2017 13:06:16 +0200</lastBuildDate>
     <generator>Jekyll v3.6.0</generator>
     
       <item>
-        <title>Jekyll - Die Statik des Webs</title>
+        <title>Jekyll - Static Websites</title>
         <description>&lt;h3&gt;Warum?&lt;/h3&gt;
-Diesen meinen neuen Blog habe zum Anlaß genommen, mich mal wieder mit Statische Webseiten - Generatoren auseinander zu setzen. Ich hatte schon mal
+Diesen meinen neuen Blog habe zum Anlaß genommen, mich mal wieder mit Statische Webseiten - Generatoren auseinander zu setzen und einen kleinen Überblick zu schreiben. Ich hatte schon mal
 &lt;a href='https://nanoc.ws' title='nanoc'&gt;nanoc&lt;/a&gt;
 verwendet, ich habe mir
 &lt;a href='https://gohugo.io/'&gt;Hugo&lt;/a&gt;
@@ -28,14 +28,14 @@ verwende, und die nötigen ruby Sachen sowieso schon auf meiner Maschine hatte, 
 &lt;a href='https://github.com/samvincent/jekyll-haml'&gt;jekyll-haml&lt;/a&gt;
 installiert.
 &lt;h3&gt;Wozu braucht man das?&lt;/h3&gt;
-Jekyll ist sowas wie ein Zwischending zwischen „von Hand“ geschriebenen statischen Seiten und so mächtigen Content Management Systemen wie Wordpress oder Typo3. Es ermöglicht einerseits Templates und ein wenig Logik und Automatismen beim Webseitenbau einzubeziehen. Andererseits braucht man keine Datenbank und kein PHP oder dergleichen. Neuer Inhalt wird einfach in Form von Text-Dateien erstellt, Jekyll stellt dann alles zusammen. Auf dem Server landen lediglich die fertigen HTML- und CSS-Dateien. Deswegen „statisch“.
+Jekyll ist sowas wie ein Zwischending zwischen „von Hand“ geschriebenen statischen Seiten und grossen Content Management Systemen wie Wordpress oder Typo3. Es ermöglicht einerseits Templates und ein wenig Logik und Automatismen beim Webseitenbau einzubeziehen. Andererseits braucht man keine Datenbank und kein PHP oder dergleichen. Neuer Inhalt wird einfach in Form von Text-Dateien erstellt, Jekyll stellt dann alles zusammen. Auf dem Server landen lediglich die fertigen HTML- und CSS-Dateien. Deswegen „statisch“.
 &lt;br&gt;Die Vorteile sind klar: Keine Sicherheitsprobleme und sie sind sehr schnell, weil serverseitig nichts passieren muss, ausser das HTML  auszuliefern.&lt;/br&gt;
 &lt;h3&gt;Und wie geht das jetzt?&lt;/h3&gt;
-Um einen neuen Blog-Post oder sogar für eine neue Seite muss lediglich eine Plain Text Datei angelegt werden, mit dem sog. „Frontmatter“ am Anfang, gefolgt vom Inhalt, standardmässig in der Auszeichnungs-Syntax „Markdown“.
+Um einen neuen Blog-Post oder sogar für eine neue Seite muss lediglich eine Plain Text Datei angelegt werden, mit dem sog. „Frontmatter“ am Anfang, gefolgt vom Inhalt. Standardmässig in der Auszeichnungs-Syntax „Markdown“:
 &lt;p&gt;
 &lt;figure&gt;
 &lt;figcaption&gt;
-Frontmatter:
+Frontmatter in Markdown:
 &lt;pre&gt;layout: post
 title:  &quot;Jekyll - Die Statik des Webs&quot;
 date:   2017-10-16 18:30:00 +0200
@@ -44,28 +44,29 @@ author: &quot;Daniel Schubert&quot;&lt;/pre&gt;
 &lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;/p&gt;
-Im Frontmatter werden die Meta-Informationen notiert. Die Eigenschaft „layout“ bestimmt, ob es ein Post oder eine Seite, oder ein Custom Inhalt sein soll. Das bestimmt wie der Inhalt angezeigt wird.
-&lt;br&gt;Dann folgt der Inhalt. Ich verwende, wie bereits erwähnt, nicht Markdown sondern haml. Das sieht dann so aus:&lt;/br&gt;
+Im Frontmatter werden die Meta-Informationen notiert. Die Eigenschaft „layout“ bestimmt, ob es ein Post, eine Seite, oder ein Custom Inhalt sein soll. Das beeinflusst wie der Inhalt angezeigt wird.
+&lt;br&gt;Dann folgt der eigentliche Inhalt. Ich verwende, wie bereits erwähnt, nicht Markdown sondern haml. Das sieht dann so aus:&lt;/br&gt;
 &lt;p&gt;
 &lt;figure&gt;
 &lt;figcaption&gt;
-Inhalt in haml
+Inhalt in haml:
 &lt;pre&gt;%h3 Warum?&amp;#x000A;Diesen meinen neuen Blog habe zum Anlaß genommen, mich mal wieder mit &amp;#x000A;Statische Webseiten - Generatoren auseinander zu setzen. Ich hatte schon mal &amp;#x000A;%a{:href =&gt; &quot;#&quot;, :title =&gt; &quot;nanoc&quot;} nanoc &amp;#x000A;verwendet, ich habe mir &amp;#x000A;%a{:href =&gt; &quot;#&quot;} Hugo &amp;#x000A;angesehen, schliesslich habe ich mich dazu entschieden &amp;#x000A;%a{:href =&gt; &quot;#&quot;} Jekyll &amp;#x000A;zu verwenden.&amp;#x000A;&lt;/pre&gt;
 &lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;/p&gt;
-Für einen „Techie“ macht das Sinn, allerdings ist zugegebenermaßen nicht besonders intuitiv. Standardmässig wird der Inhalt in „Markdown“ notiert. Das ist eine recht einfache Methode formatierten Text zu schreiben:
+„HAML“ ist zugegebenermaßen nicht besonders intuitiv. Standardmässig wird der Inhalt ja in „Markdown“ notiert. Das ist einfacher zu lesen:
 &lt;p&gt;
 &lt;figure&gt;
 &lt;figcaption&gt;
-Inhalt in haml
+Inhalt in haml:
 &lt;pre&gt;### Warum?&amp;#x000A;Diesen meinen neuen Blog habe zum Anlaß genommen, mich mal wieder mit &amp;#x000A;Statische Webseiten - Generatoren auseinander zu setzen. Ich hatte schon &amp;#x000A;mal [nanoc](http://#) verwendet, ich habe mir [Hugo](#) angesehen, &amp;#x000A;schliesslich habe ich mich dazu entschieden [Jekyll](http://#) zu verwenden.&amp;#x000A;&lt;/pre&gt;
 &lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;/p&gt;
 Wiederkehrende Elemente wie footer und header lassen sich in Templates organisieren und dann nach Bedarf zusammensetzen.
 &lt;h3&gt;Und jetzt?&lt;/h3&gt;
-Ich werde Jekyll wohl in Zukunft für einige Projekte verwenden, wo jedoch Kunden selbst ihren Content bearbeiten wollen werde ich weiterhin auf Wordpress etc. setzen. Zwar ist es unschlagbar einfach, Inhalte mit Text Dateien zu erstellen, und dann mit
+Wenn man sich mit den Konventionen in Jekyll vertraut gemacht hat geht das Bloggen unglaublich einfach. Bestechend einfach ist, dass neue Inhalte einfach durch das erstellen von simplen Textdateien hinzugefügt werden.
+&lt;br&gt;Ich werde Jekyll wohl in Zukunft für einige Projekte verwenden. Wo jedoch Kunden selbst ihren Content bearbeiten wollen, werde ich weiterhin auf Wordpress etc. setzen. Zwar ist es unschlagbar einfach, Inhalte mit Text Dateien zu erstellen, und dann mit&lt;/br&gt;
 &lt;pre&gt;git push origin master&lt;/pre&gt;
 zu veröffentlichen. Der Umgang mit Markdown oder Haml und git ist für den „normalen“ Benutzer / Redakteur / Blogger aber kaum vermittelbar. Jekyll ist dann doch ein Tool für ambitionierte Hobbyisten und professionelle Anwender.
 &lt;p&gt;&lt;/p&gt;
@@ -73,8 +74,8 @@ zu veröffentlichen. Der Umgang mit Markdown oder Haml und git ist für den „n
 Tags: web, ruby, jekyll, haml, und bericht
 </description>
         <pubDate>Mon, 16 Oct 2017 18:30:00 +0200</pubDate>
-        <link>http://localhost:4000/web/ruby/jekyll/haml/bericht/2017/10/16/jekyll.html</link>
-        <guid isPermaLink="true">http://localhost:4000/web/ruby/jekyll/haml/bericht/2017/10/16/jekyll.html</guid>
+        <link>https://danielschubert.github.io/web/ruby/jekyll/haml/bericht/2017/10/16/jekyll.html</link>
+        <guid isPermaLink="true">https://danielschubert.github.io/web/ruby/jekyll/haml/bericht/2017/10/16/jekyll.html</guid>
         
         
         <category>web</category>
@@ -98,8 +99,8 @@ Viel Spass!
 &lt;/p&gt;
 </description>
         <pubDate>Mon, 16 Oct 2017 18:05:00 +0200</pubDate>
-        <link>http://localhost:4000/blog/zeugs/2017/10/16/ich-beginne.html</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/zeugs/2017/10/16/ich-beginne.html</guid>
+        <link>https://danielschubert.github.io/blog/zeugs/2017/10/16/ich-beginne.html</link>
+        <guid isPermaLink="true">https://danielschubert.github.io/blog/zeugs/2017/10/16/ich-beginne.html</guid>
         
         
         <category>blog</category>

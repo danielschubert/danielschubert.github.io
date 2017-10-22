@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Jekyll - Die Statik des Webs</title>
+  <title>Jekyll - Static Websites</title>
   <meta name="description" content="Warum?">
   <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|Source+Sans+Pro:400,700,200,300|Josefin+Sans:400,600,700,300' rel='stylesheet' type='text/css'>
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
@@ -57,7 +57,7 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline"><a class="post-title-link"  href="https://danielschubert.github.io">Jekyll - Die Statik des Webs</a></h1>
+    <h1 class="post-title" itemprop="name headline"><a class="post-title-link"  href="https://danielschubert.github.io">Jekyll - Static Websites</a></h1>
   <center>  <p class="post-meta"><time datetime="2017-10-16T18:30:00+02:00" itemprop="datePublished">Oct 16, 2017</time></p>
     
      <div class="">
@@ -71,7 +71,7 @@
 
   <div class="post-content" itemprop="articleBody">
     <h3>Warum?</h3>
-Diesen meinen neuen Blog habe zum Anlaß genommen, mich mal wieder mit Statische Webseiten - Generatoren auseinander zu setzen. Ich hatte schon mal
+Diesen meinen neuen Blog habe zum Anlaß genommen, mich mal wieder mit Statische Webseiten - Generatoren auseinander zu setzen und einen kleinen Überblick zu schreiben. Ich hatte schon mal
 <a href='https://nanoc.ws' title='nanoc'>nanoc</a>
 verwendet, ich habe mir
 <a href='https://gohugo.io/'>Hugo</a>
@@ -87,14 +87,14 @@ verwende, und die nötigen ruby Sachen sowieso schon auf meiner Maschine hatte, 
 <a href='https://github.com/samvincent/jekyll-haml'>jekyll-haml</a>
 installiert.
 <h3>Wozu braucht man das?</h3>
-Jekyll ist sowas wie ein Zwischending zwischen „von Hand“ geschriebenen statischen Seiten und so mächtigen Content Management Systemen wie Wordpress oder Typo3. Es ermöglicht einerseits Templates und ein wenig Logik und Automatismen beim Webseitenbau einzubeziehen. Andererseits braucht man keine Datenbank und kein PHP oder dergleichen. Neuer Inhalt wird einfach in Form von Text-Dateien erstellt, Jekyll stellt dann alles zusammen. Auf dem Server landen lediglich die fertigen HTML- und CSS-Dateien. Deswegen „statisch“.
+Jekyll ist sowas wie ein Zwischending zwischen „von Hand“ geschriebenen statischen Seiten und grossen Content Management Systemen wie Wordpress oder Typo3. Es ermöglicht einerseits Templates und ein wenig Logik und Automatismen beim Webseitenbau einzubeziehen. Andererseits braucht man keine Datenbank und kein PHP oder dergleichen. Neuer Inhalt wird einfach in Form von Text-Dateien erstellt, Jekyll stellt dann alles zusammen. Auf dem Server landen lediglich die fertigen HTML- und CSS-Dateien. Deswegen „statisch“.
 <br>Die Vorteile sind klar: Keine Sicherheitsprobleme und sie sind sehr schnell, weil serverseitig nichts passieren muss, ausser das HTML  auszuliefern.</br>
 <h3>Und wie geht das jetzt?</h3>
-Um einen neuen Blog-Post oder sogar für eine neue Seite muss lediglich eine Plain Text Datei angelegt werden, mit dem sog. „Frontmatter“ am Anfang, gefolgt vom Inhalt, standardmässig in der Auszeichnungs-Syntax „Markdown“.
+Um einen neuen Blog-Post oder sogar für eine neue Seite muss lediglich eine Plain Text Datei angelegt werden, mit dem sog. „Frontmatter“ am Anfang, gefolgt vom Inhalt. Standardmässig in der Auszeichnungs-Syntax „Markdown“:
 <p>
 <figure>
 <figcaption>
-Frontmatter:
+Frontmatter in Markdown:
 <pre>layout: post
 title:  "Jekyll - Die Statik des Webs"
 date:   2017-10-16 18:30:00 +0200
@@ -103,28 +103,29 @@ author: "Daniel Schubert"</pre>
 </figcaption>
 </figure>
 </p>
-Im Frontmatter werden die Meta-Informationen notiert. Die Eigenschaft „layout“ bestimmt, ob es ein Post oder eine Seite, oder ein Custom Inhalt sein soll. Das bestimmt wie der Inhalt angezeigt wird.
-<br>Dann folgt der Inhalt. Ich verwende, wie bereits erwähnt, nicht Markdown sondern haml. Das sieht dann so aus:</br>
+Im Frontmatter werden die Meta-Informationen notiert. Die Eigenschaft „layout“ bestimmt, ob es ein Post, eine Seite, oder ein Custom Inhalt sein soll. Das beeinflusst wie der Inhalt angezeigt wird.
+<br>Dann folgt der eigentliche Inhalt. Ich verwende, wie bereits erwähnt, nicht Markdown sondern haml. Das sieht dann so aus:</br>
 <p>
 <figure>
 <figcaption>
-Inhalt in haml
+Inhalt in haml:
 <pre>%h3 Warum?&#x000A;Diesen meinen neuen Blog habe zum Anlaß genommen, mich mal wieder mit &#x000A;Statische Webseiten - Generatoren auseinander zu setzen. Ich hatte schon mal &#x000A;%a{:href => "#", :title => "nanoc"} nanoc &#x000A;verwendet, ich habe mir &#x000A;%a{:href => "#"} Hugo &#x000A;angesehen, schliesslich habe ich mich dazu entschieden &#x000A;%a{:href => "#"} Jekyll &#x000A;zu verwenden.&#x000A;</pre>
 </figcaption>
 </figure>
 </p>
-Für einen „Techie“ macht das Sinn, allerdings ist zugegebenermaßen nicht besonders intuitiv. Standardmässig wird der Inhalt in „Markdown“ notiert. Das ist eine recht einfache Methode formatierten Text zu schreiben:
+„HAML“ ist zugegebenermaßen nicht besonders intuitiv. Standardmässig wird der Inhalt ja in „Markdown“ notiert. Das ist einfacher zu lesen:
 <p>
 <figure>
 <figcaption>
-Inhalt in haml
+Inhalt in haml:
 <pre>### Warum?&#x000A;Diesen meinen neuen Blog habe zum Anlaß genommen, mich mal wieder mit &#x000A;Statische Webseiten - Generatoren auseinander zu setzen. Ich hatte schon &#x000A;mal [nanoc](http://#) verwendet, ich habe mir [Hugo](#) angesehen, &#x000A;schliesslich habe ich mich dazu entschieden [Jekyll](http://#) zu verwenden.&#x000A;</pre>
 </figcaption>
 </figure>
 </p>
 Wiederkehrende Elemente wie footer und header lassen sich in Templates organisieren und dann nach Bedarf zusammensetzen.
 <h3>Und jetzt?</h3>
-Ich werde Jekyll wohl in Zukunft für einige Projekte verwenden, wo jedoch Kunden selbst ihren Content bearbeiten wollen werde ich weiterhin auf Wordpress etc. setzen. Zwar ist es unschlagbar einfach, Inhalte mit Text Dateien zu erstellen, und dann mit
+Wenn man sich mit den Konventionen in Jekyll vertraut gemacht hat geht das Bloggen unglaublich einfach. Bestechend einfach ist, dass neue Inhalte einfach durch das erstellen von simplen Textdateien hinzugefügt werden.
+<br>Ich werde Jekyll wohl in Zukunft für einige Projekte verwenden. Wo jedoch Kunden selbst ihren Content bearbeiten wollen, werde ich weiterhin auf Wordpress etc. setzen. Zwar ist es unschlagbar einfach, Inhalte mit Text Dateien zu erstellen, und dann mit</br>
 <pre>git push origin master</pre>
 zu veröffentlichen. Der Umgang mit Markdown oder Haml und git ist für den „normalen“ Benutzer / Redakteur / Blogger aber kaum vermittelbar. Jekyll ist dann doch ein Tool für ambitionierte Hobbyisten und professionelle Anwender.
 <p></p>
